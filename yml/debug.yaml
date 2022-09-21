@@ -1,0 +1,26 @@
+name: debug
+model: resnet_arcface_SGD
+base_log_path: logs/debug/arcface
+train_data_path: train_data
+test_data_path: test_data
+loss: arcface
+pretrained: true
+optimizer:
+  name: SGD
+  lr: 0.1
+  momentum: 0.9
+  weight_decay: 0.0005
+  nesterov: true
+height: 144
+width: 144
+num_classes: 4038
+train_ratio: 0.8
+num_workers: 8
+embedding_size: 512
+pin_memory: true
+epochs: 200
+batch_size: 128
+margin: 0.5
+scale: 64
+step_size: 30
+seed: 9999
