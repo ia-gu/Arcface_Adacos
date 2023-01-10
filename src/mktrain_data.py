@@ -1,9 +1,11 @@
 import shutil
 import os
-# homeから学習用データを引っ張ってくる(mktest_data()とほとんど一緒)
+
+# choose data used in training
+# when using, need to change path
 def mktrain_data():
     print('start train_data installation')
-    
+
     os.makedirs('train_data', exist_ok=True)
 
     path = '/home/data/LFW/lfw'
@@ -23,6 +25,6 @@ def mktrain_data():
                 shutil.copy(os.path.join(path,data[i],charPath), 'train_data/'+data[i])
 
     print('train_data loaded')
-    
+
 if __name__ == '__main__':
     mktrain_data()

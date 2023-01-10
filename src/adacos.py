@@ -15,9 +15,7 @@ class AdaCos(nn.Module):
         nn.init.xavier_uniform_(self.W)
 
     def forward(self, input, label=None, training=True):
-        # normalize features
         x = F.normalize(input)
-        # normalize weights
         W = F.normalize(self.W)
         # dot product
         logits = F.linear(x, W)
